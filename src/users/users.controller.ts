@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  NotFoundException,
   Param,
   Patch,
   Post,
@@ -11,7 +12,6 @@ import {
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
 import { UsersService } from './users.service';
-
 
 @Controller('auth')
 export class UsersController {
@@ -23,8 +23,13 @@ export class UsersController {
   }
 
   @Get('/:id')
-  findUser(@Param('id') id: string) {
-    return this.usersService.findOne(parseInt(id));
+  async findUser(@Param('id') id: string) {
+    const user = await this.usersService.findOne(parseInt(id));
+    if (!user) {
+      throw new NotFoundException("Didn't get user ! try another id");
+    }
+
+    return user;
   }
 
   @Get()
@@ -37,10 +42,8 @@ export class UsersController {
     return this.usersService.remove(parseInt(id));
   }
 
-  
-@Patch('/:id')
-updateUser(@Param ('id') id : string , @Body() body : UpdateUserDto){
-return this.usersService.update(parseInt(id) , body)
-}
-
+  @Patch('/:id')
+  updateUser(@Param('id') id: string, @Body() body: UpdateUserDto) {
+    return this.usersService.update(parseInt(id), body);
+  }
 }
