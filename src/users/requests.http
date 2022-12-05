@@ -3,6 +3,34 @@ POST http://localhost:3000/auth/signup
 content-type : application/json
 
 {
-    "email" : "nathu@outlook.com",
+    "email" : "shiva@outlook.com",
     "password" : "7669Shiva@"
 }
+
+
+
+### Find a particular user with a given Id
+GET  http://localhost:3000/auth/3
+
+
+
+### Find all users with a given email
+GET http://localhost:3000/auth?email=nathu@outlook.com
+
+
+### Delete a user given id
+
+DELETE  http://localhost:3000/auth/2
+
+
+
+
+### Update a user 
+PATCH  http://localhost:3000/auth/3
+content-type: application/json
+
+{
+    "email" : "me.kumarrahul@gmail.com"
+}
+
+
