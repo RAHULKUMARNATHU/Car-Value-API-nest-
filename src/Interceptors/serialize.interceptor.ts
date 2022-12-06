@@ -9,6 +9,11 @@ import { map } from 'rxjs/operators';
 import { plainToClass } from 'class-transformer';
 import { UserDto } from 'src/users/dtos/user.dto';
 
+
+
+export function Serialize(dto:any){
+  return UseInterceptors(new SerializeInterceptor(dto));
+}
 export class SerializeInterceptor implements NestInterceptor {
   constructor(private dto: any) {}
 
@@ -26,7 +31,7 @@ export class SerializeInterceptor implements NestInterceptor {
         // by the response handler
 
         // console.log('I am running before the response is sent out ', data);
-        return plainToClass(UserDto, data, {
+        return plainToClass(this.dto, data, {
           excludeExtraneousValues: true,
         });
       }),
