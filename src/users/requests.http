@@ -44,7 +44,7 @@ content-type: application/json
 
 ### Set Session (Set color)
  
-  GET http://localhost:3000/auth/colors/orange
+GET http://localhost:3000/auth/colors/orange
 
 ### Get the color
 GET http://localhost:3000/auth/colors
