@@ -8,6 +8,7 @@ import {
   Patch,
   Post,
   Query,
+  Session,
 } from '@nestjs/common';
 import { Serialize } from 'src/Interceptors/serialize.interceptor';
 import { CreateUserDto } from './dtos/create-user.dto';
@@ -22,6 +23,17 @@ export class UsersController {
     private usersService: UsersService,
     private authService: AuthService,
   ) {}
+
+  // Session cookie
+  @Get('/colors/:color')
+  setColor(@Param('color') color: string, @Session() session: any) {
+    session.color = color;
+  }
+
+  @Get('/colors')
+  getColor(@Session() session: any) {
+    return session.color;
+  }
 
   @Post('/signup')
   createUser(@Body() body: CreateUserDto) {

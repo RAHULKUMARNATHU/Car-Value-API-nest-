@@ -27,7 +27,7 @@ GET http://localhost:3000/auth?email=me.kumarrahul@gmail.com
 
 ### Delete a user given id
 
-DELETE  http://localhost:3000/auth/6
+DELETE  http://localhost:3000/auth/7
 
 
 
@@ -40,3 +40,11 @@ content-type: application/json
     "email" : "me.kumarrahul@gmail.com"
 }
 
+
+
+### Set Session (Set color)
+ 
+  GET http://localhost:3000/auth/colors/orange
+
+### Get the color
+GET http://localhost:3000/auth/colors
