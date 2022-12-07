@@ -7,7 +7,14 @@ content-type : application/json
     "password" : "Brain@2022"
 }
 
+###Signin User
+POST http://localhost:3000/auth/signin
+content-type : application/json
 
+{
+    "email" : "rajvivek.brain@gmail.com",
+    "password" : "Brain@2022"
+}
 
 ### Find a particular user with a given Id
 GET  http://localhost:3000/auth/4

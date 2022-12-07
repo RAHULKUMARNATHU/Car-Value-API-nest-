@@ -30,6 +30,11 @@ export class UsersController {
 
   // @UseInterceptors(new SerializeInterceptor(UserDto))
 
+  @Post('/signin')
+  signin(@Body() body: CreateUserDto) {
+    return this.authService.signin(body.email, body.password);
+  }
+
   @Serialize(UserDto)
   @Get('/:id')
   async findUser(@Param('id') id: string) {
