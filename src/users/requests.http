@@ -16,6 +16,13 @@ content-type : application/json
     "password" : "test@2022"
 }
 
+
+### Get the currently signed in user
+GET http://localhost:3000/auth/whoami
+
+
+
+
 ### Find a particular user with a given Id
 GET  http://localhost:3000/auth/4
 
