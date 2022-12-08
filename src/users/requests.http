@@ -7,7 +7,7 @@ content-type : application/json
     "password" : "test@2022"
 }
 
-###Signin User
+### Signin User
 POST http://localhost:3000/auth/signin
 content-type : application/json
 
@@ -20,7 +20,8 @@ content-type : application/json
 ### Get the currently signed in user
 GET http://localhost:3000/auth/whoami
 
-
+### Sign out
+POST http://localhost:3000/auth/signout
 
 
 ### Find a particular user with a given Id
