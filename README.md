@@ -49,7 +49,7 @@ $ npm run start:prod
 
 ```bash
 # unit tests
-$ npm run test
+$ npm run test:watch
 
 # e2e tests
 $ npm run test:e2e
@@ -71,3 +71,9 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+
+## Used Extensions
+- Rest Client (RestApi)
+- SQLite(database Explorer)
