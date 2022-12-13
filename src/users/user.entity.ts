@@ -6,7 +6,7 @@ import {
   Column,
   Entity,
   PrimaryGeneratedColumn,
-  OneToMany
+  OneToMany,
 } from 'typeorm';
 
 // import { Exclude } from 'class-transformer';
@@ -22,9 +22,11 @@ export class User {
   // @Exclude()
   password: string;
 
-  @OneToMany(()=> Report , (report) => report.user)
-  reports: Report[];
+  @Column({ default: true })
+  admin: boolean;
 
+  @OneToMany(() => Report, (report) => report.user)
+  reports: Report[];
 
   @AfterInsert()
   logInsert() {
