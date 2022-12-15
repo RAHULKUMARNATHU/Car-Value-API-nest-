@@ -7,9 +7,9 @@ content-type: application/json
     "model":"city",
     "year":1980,
     "mileage" : 1000,
-    "lng":0,
-    "lat":0,
-    "price":5000
+    "lng":45,
+    "lat":45,
+    "price":50000
 }
 
 
